@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+   <style>
+       .container {
+           width: 400px;
+           display:grid;
+           grid-template-columns: 1fr 1fr 1fr 1fr;
+           grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+           grid-gap: 5px;
+       }
+       .a {
+           height: 100px;
+           background-color: gold;
+           grid-column: 1/5;
+           
+       }
+       .b {
+           background-color: green;
+           grid-column: 1/2;
+           grid-row: 2/4;
+       }
+       .c {
+           background-color: red;
+           grid-column: 2/5;
+           grid-row: 2/4;
+       }
+       .d {
+           background-color: grey;
+           grid-column: 1/5;
+       }
+       
+    
+    </style>
+   
+   
+    <div class="container">
+        <div class="a">a</div>
+        <div class="b">b</div>
+        <div class="c">c</div>
+        <div class="d">d</div>
+        
+        
+    </div>
+    
+    
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

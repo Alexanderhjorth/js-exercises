@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <style>
+        .dyr {
+            display: grid;
+            grid-template-columns: (1fr);
+            /* grid-auto-rows: 1fr 1fr 1fr; */
+            grid-gap: 10px;
+        }
+
+        @media screen and (min-width: 480px) {
+            div {
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+                grid-gap: 10px;
+            }
+
+        }
+
+    </style>
+
+    <div class="dyr"></div>
+    <template class="dyretemplate">
+        <div>
+            <h1></h1>
+            <ul>
+                <li class="type-data"></li>
+                <li class="levested-data"></li>
+            </ul>
+            <img width=100 src="" alt="">
+        </div>
+    </template>
+
+    <script>
+        let dyr = [{
+                "navn": "isbjoern",
+                "type": "pattedyr",
+                "levested": "arktiske egne",
+                "billede": "dancingpolarbear.gif"
+            },
+
+            {
+                "navn": "delfin",
+                "type": "pattedyr",
+                "levested": "vand",
+                "billede": "dolphin.gif"
+            },
+
+            {
+                "navn": "ravn",
+                "type": "fugl",
+                "levested": "træer",
+                "billede": "raven.gif"
+            }
+        ];
+
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            dest = document.querySelector(".dyr");
+            temp = document.querySelector(".dyretemplate");
+            dyr.forEach(animal => {
+                let klon = temp.cloneNode(true).content;
+
+                klon.querySelector("h1").textContent = animal.navn;
+
+                klon.querySelector("ul .type-data").textContent = animal.type;
+
+                klon.querySelector("ul .levested-data").textContent = animal.levested;
+
+                klon.querySelector("img").src = animal.billede;
+
+                dest.appendChild(klon);
+
+            });
+        };
+
+    </script>
+
+</body>
+
+</html>
